@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>見て！みて！</title>
+    <style>
+        html, body {
+            margin: 0;
+            background-color: orange;
+        }
+
+        .prev {
+            cursor: pointer;
+            display: inline-block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            margin: auto;
+            width: 7rem;
+            height: 1rem;
+            border: 2px solid black;
+            padding: 10rem;
+            height: 2rem;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="content-box" style="background: orange;">
+        <div class="top">
+            <span class="prev">ここを押して！</span>
+        </div>
+    </div>
+    <script>
+        'use strict';
+        let fly = 0;
+        const clay = ['・', '・・', '・・・', 'なんもないよwwwwww']
+        document.querySelector('.prev').onclick = function() {
+            fly=0;
+            setInterval(function() {
+                document.querySelector('.prev').textContent = clay[fly];
+                fly++;
+            }, 1000)
+        }
+    </script>
+</body>
+</html>
